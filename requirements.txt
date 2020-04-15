@@ -1,0 +1,4 @@
+fastapi==0.54.1
+unicorn==1.0.1
+pyjwt
+pymongo
