@@ -1,7 +1,6 @@
 # User Authentication and text saving api
 
-The API is built by using FASTapi framework, This api uses is OAuth2 Authenticationprotocol,OAuth2 is a specification that defines several ways to handle authentication and authorization.
-For login api uses "JSON Web Tokens" ie JWT and hashin password for security the token
+The API is built by using FASTapi framework, This api uses is OAuth2 Authenticationprotocol,OAuth2 is a specification that defines several ways to handle authentication and authorization. For login api uses "JSON Web Tokens" ie JWT and hashing password using hashing algorithms for security.
 
 # Installing
 
@@ -55,9 +54,13 @@ The formate of json should be
     "password": string,
 }
 ```
+![](images/signup.png)
 
-The responce will be a json describing the user in the same json formate as above that means the signup is successfully executed.
+The responce will be a json object which contains the ObjecId coresponding to the signed up user which get stored in mongodb user collection, that shows that the signup is successfully executed.
 If the username or email already exists a error massage in the json formate will arrive.
+
+![](images/emailexists.png)
+![](images/usernameexists.png)
 
 # Login
 
@@ -69,9 +72,13 @@ Now to login send a Basic Auth using postman in Authorization section
 
 Now put the username nd password in the Basic Auth Credentials form and sent a GET request to http://127.0.0.1:8000/login/ url 
 
+![](images/login.png)
+
 If the credentials were correct the user will be redirected to http://127.0.0.1:8000/users/me/ url with a json response of details of user
 
 if credetials were wrong an error massage will be displayed
+
+![](images/incorrect_credentials.png)
 
 # text saving 
 
@@ -84,18 +91,28 @@ After login send the message in the jason by POST request to http://127.0.0.1:80
     "massage": string
 }
 ```
+![](images/user_me_sendmassage.png)
+
+If user is not loged in the erroe massage will be displayed.
+
+![](images/validationerrormassage.png)
+
 
 # Get all the texts of the logged in user
 
 To get all the texts in the json formate send a GET request to http://127.0.0.1:8000/users/me/massages/ url
 
-The response will be a json of all the massages stored by user
+The response will be a json of all the massages stored by user.
+
+![](images/user_me_massages.png)
 
 # Get details of current logged in user
 
 To get the details of current logged in user sen a GET request to http://127.0.0.1:8000/users/me url
 
-A json respons will be sent with details of user if user in not logged in a error massage will arrive
+A json respons will be sent with details of user if user in not logged in a error massage will get displayed.
+
+![](images/user_me.png)
 
 
 
