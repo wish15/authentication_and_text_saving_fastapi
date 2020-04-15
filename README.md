@@ -43,7 +43,9 @@ The application will run on http://127.0.0.1:8000/
 
 Now to test the API open a API testing tool such as postman
 
-In postman send a json in a post request to http://127.0.0.1:8000/signup/ url
+# Sign Up
+
+In postman send a json in a POST request to http://127.0.0.1:8000/signup/ url
 The formate of json should be
 ```
 {
@@ -53,11 +55,48 @@ The formate of json should be
     "password": string,
 }
 ```
-The responce will be a json describing the user in the same json formate as above that means the signup is successfully executed
 
-Now to login send a Basic Auth using postman in Authentication section
+The responce will be a json describing the user in the same json formate as above that means the signup is successfully executed.
+If the username or email already exists a error massage in the json formate will arrive.
 
-The user will be redirected to http://127.0.0.1:8000/users/me/ url
+# Login
+
+Now to login send a Basic Auth using postman in Authorization section
+
+
+![](images/Basic_Auth-1.png)
+
+
+Now put the username nd password in the Basic Auth Credentials form and sent a GET request to http://127.0.0.1:8000/login/ url 
+
+If the credentials were correct the user will be redirected to http://127.0.0.1:8000/users/me/ url with a json response of details of user
+
+if credetials were wrong an error massage will be displayed
+
+# text saving 
+
+to save a text user need to login first if not logged in an error massage will be displayed.
+
+After login send the message in the jason by POST request to http://127.0.0.1:8000/users/me/sendmassage url in the following formate
+
+```
+{
+    "massage": string
+}
+```
+
+# Get all the texts of the logged in user
+
+To get all the texts in the json formate send a GET request to http://127.0.0.1:8000/users/me/massages/ url
+
+The response will be a json of all the massages stored by user
+
+# Get details of current logged in user
+
+To get the details of current logged in user sen a GET request to http://127.0.0.1:8000/users/me url
+
+A json respons will be sent with details of user if user in not logged in a error massage will arrive
+
 
 
 
