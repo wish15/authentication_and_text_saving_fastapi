@@ -216,5 +216,5 @@ async def received_massage(massage:Massage,current_user: User = Depends(get_curr
     for massage in user_massages:
         massage_collection.update(current_id,{"$push":{"massages": current_massage}})
         return {"massage has been saved"}
-    massage_collection.insert({"_id":current_id["_id"],"massages":[]})
+    massage_collection.insert({"_id":current_id["_id"],"massages":[current_massage]})
     return {"Your first massage has been saved"}
