@@ -1,4 +1,4 @@
-# User Authentication and text saving api
+# User Authentication and text saving api using FASTapi and Mongodb
 
 The API is built by using FASTapi framework, This api uses is OAuth2 Authenticationprotocol,OAuth2 is a specification that defines several ways to handle authentication and authorization. For login api uses "JSON Web Tokens" ie JWT and hashing password using hashing algorithms for security.
 
