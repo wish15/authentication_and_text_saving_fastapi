@@ -131,11 +131,11 @@ A json response will be sent with details of user if user in not logged-in an er
 
 # Testing
 
-For testing install pytest library then run pytest in command prompt in the same directry.
-test_main.py will automatically get executed and testing will get perform.
+For testing install pytest library then run pytest in command prompt in the same directory.
+_test_main.py_ will automatically get executed and testing will get perform.
 
 
-Thank you
+Thank you!!!
 
 
 
