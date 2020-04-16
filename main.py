@@ -127,7 +127,7 @@ async def get_current_active_user(current_user: User = Depends(get_current_user)
 # wellcome route
 @app.get("/")
 def wellocme():
-    return {"mag":"Hello and wellcome plase goto /login to login"}
+    return {"msg":"Hello and wellcome plase goto /login to login"}
 
 #login route
 @app.get("/login")
