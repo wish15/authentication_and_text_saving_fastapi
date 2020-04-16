@@ -23,7 +23,7 @@ install uvicorn to run the fastapi application.
 ```
 install jwt for python.
 ```
-  $ pip install pyjwt
+   $ pip install pyjwt
 ```
 
 install pymongo
@@ -63,7 +63,7 @@ The format of json should be.
 ```
 ![](images/signup.png)
 
-The response will be a json object which contains the ObjecId corresponding to the signed up user which get stored in mongodb user collection, that shows that the signup is successfully executed.
+The response will be a json object which contains the ObjectId corresponding to the signed up user which get stored in mongodb user collection, that shows that the signup is successfully executed.
 If the email already exists a error message in the json format get displayed.
 
 ![](images/emailexists.png)
