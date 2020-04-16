@@ -96,7 +96,7 @@ If credentials were wrong an error message get displayed.
 
 # text saving 
 
-to save a text user need to login first if not logged in an error message will be displayed.
+to save a text user need to login first,if not logged in an error message will be displayed.
 
 After login send the message in the jason by POST request to http://127.0.0.1:8000/users/me/sendmassage url in the following format.
 
@@ -124,7 +124,7 @@ The response will be a json of all the messages stored by user.
 
 To get the details of current logged in user send a GET request to http://127.0.0.1:8000/users/me url.
 
-A json response will be sent with details of user if user in not logged-in an error message will get displayed.
+A json response will be sent with details of user, if user in not logged-in an error message will get displayed.
 
 ![](images/user_me.png)
 
@@ -132,7 +132,7 @@ A json response will be sent with details of user if user in not logged-in an er
 # Testing
 
 For testing install pytest library then run pytest in command prompt in the same directory.
-_test_main.py_ will automatically get executed and testing will get perform.
+_test_main.py_ file will automatically get executed and testing will get perform.
 
 
 Thank you!!!
