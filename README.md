@@ -31,6 +31,12 @@ install pymongo
 ```
     $ pip install pymongo
 ```
+
+install pytest for testing of api
+```
+    $ pip install pytest
+```
+
 # Getting Started
 
 To run the API in local machine run the following command.
@@ -41,6 +47,7 @@ To run the API in local machine run the following command.
 The application will run on http://127.0.0.1:8000/
 
 Now to test the API open a API testing tool such as Postman.
+
 
 # Sign Up
 
@@ -120,6 +127,16 @@ To get the details of current logged in user send a GET request to http://127.0.
 A json response will be sent with details of user if user in not logged-in an error massage will get displayed.
 
 ![](images/user_me.png)
+
+
+# Testing
+
+For testing install pytest library then run pytest in command prompt in the same directry.
+test_main.py will automatically get executed and testing will get perform.
+
+
+Thank you
+
 
 
 
