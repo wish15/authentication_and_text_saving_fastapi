@@ -3,3 +3,4 @@ unicorn==1.0.1
 pyjwt
 pymongo
 gunicorn
+pytest

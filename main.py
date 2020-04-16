@@ -127,12 +127,12 @@ async def get_current_active_user(current_user: User = Depends(get_current_user)
 # wellcome route
 @app.get("/")
 def wellocme():
-    return {"Hello and wellcome plase goto /login to login"}
+    return {"mag":"Hello and wellcome plase goto /login to login"}
 
 #login route
 @app.get("/login")
 def login_user(credentials: HTTPBasicCredentials = Depends(security)):
-    print(credentials.username,credentials.password)
+    print(credentials)
     user = authenticate_user(Users_Collection, credentials.username, credentials.password)
     if not user:
         raise HTTPException(
@@ -161,9 +161,13 @@ def login_user(credentials: HTTPBasicCredentials = Depends(security)):
 
 
 # current active user route
-@app.get("/users/me/", response_model=User)
+@app.get("/users/me/")
 async def read_users_me(current_user: User = Depends(get_current_active_user)):
-    return current_user
+    user_detail=dict()
+    user_detail["full_name"]=current_user.full_name
+    user_detail["username"]=current_user.username
+    user_detail["email"]=current_user.email
+    return user_detail
 
 # route to get all the massages curresponding to current active user
 @app.get("/users/me/massages/")
